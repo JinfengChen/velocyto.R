@@ -1288,7 +1288,11 @@ show.velocity.on.embedding.cor <- function(emb,vel,n=100,cell.colors=NULL, corr.
       
     }
   }
-  return(invisible(list(tp=tp,cc=cc)))
+  if (show.grid.flow){
+      return(invisible(list(tp=tp,cc=cc,arrows=as.matrix(ars),garrows=garrows)))
+  }else{
+      return(invisible(list(tp=tp,cc=cc,arrows=as.matrix(ars))))
+  }
 }
 
 
